@@ -126,3 +126,9 @@ Pode ser atribuída a uma variável, a uma estrutura de dados, passada como argu
     Object.seal(person)
     ```
 ### Symbol
+- atributo único;
+- não é possível sobrescrever;
+- `getOwnPropertySymbols()`: Symbols registrados no objeto;
+- `Reflect.ownKeys()`: Todas as propriedades do objeto
+
+## 
