@@ -62,3 +62,67 @@ Pode ser atribuída a uma variável, a uma estrutura de dados, passada como argu
 - var = única que não respeita escopo de bloco;
 - let;
 - const.
+
+    |   |   |   |
+    |---|---|---|
+    |String|Number|Boolean|
+    |Null|Undefined|Symbol
+    |Function|Array|Object|
+#### String
+- length: quantidade de caracteres;
+- split: divide em uma lista;
+- replace: substituir;
+- slice: retorna uma fatia;
+- substr: parecido com slice;
+#### Number
+- toString: transformar em string;
+- toFixed: quantas casas decimais retornar;
+- parseFloat: aceita float;
+- parseInt: só aceita inteiro;
+### Object
+- chave e valor;
+
+    **Alterando a propriedade**
+    ```javascript
+    user.name = 'Marta'
+    user['name'] = 'Carla'
+    const prop = 'name'
+    user[prop] = 'Maria';
+    ```
+    **Criar:** 
+    ```javascript
+    user.lastName = 'da Silva';
+    ```
+    **Deletar:** 
+    ```javascript
+    delete user.name
+    ```
+    #### Métodos
+    ```javascript
+    const user = {
+        name: 'Bruno',
+        lastName: 'Sobral'
+    }
+    //Recupera as chaves
+    Object.keys(user)
+
+    //Recupera os valores das chaves do objeto
+    Object.values(user)
+    
+    //Retorna um array contendo [nome, valor]
+    Object.entries(user)
+
+    //Mergear propriedades de objetos - add a propriedade fullName em user (Conceito de imutabilidade, isso não é recomendado)
+    Object.assign(user, {fullName: 'Guilherme da Silva'})   
+        //Correto é criar um novo array
+        Object.assign({}, user, {age: 26})
+
+    //Previne alterações em um objeto
+    const newObj = { foo: 'bar'}
+    Object.freeze(newObj)
+
+    //Permite apenas alterar as propriedades existentes
+    const person = { name: 'Bruno'}
+    Object.seal(person)
+    ```
+### Symbol
