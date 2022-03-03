@@ -6,7 +6,11 @@
 
 <br/>
 
-### 🛠 Tecnologias
+Tabela de conteúdos
+=================
+- [Módulo JavaScript](https://github.com/BrunoSobralDEV/bootcamp-eduzz-fullstack/tree/main/introducao-jsES6)
+
+## 🛠 Tecnologias
 - [TypeScript](https://www.typescriptlang.org/)
 - [Node.js](https://nodejs.org/en/)
 - [React](https://pt-br.reactjs.org/)

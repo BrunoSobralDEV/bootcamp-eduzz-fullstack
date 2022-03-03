@@ -2,10 +2,11 @@
 **<i style="color: purple;">Sumário</i>**
 Tabela de conteúdos
 =================
-- <a href="#conceitos">Conceitos</a>;
-- <a href="#ecmascript">ECMAScript</a>; 
-- <a href="#tipos-e-variaveis">Tipos e Variáveis</a>;
-- <a href="#functions">Functions</a>;
+- JavaScript
+    - <a href="#conceitos">Conceitos</a>;
+    - <a href="#ecmascript">ECMAScript</a>; 
+    - <a href="#tipos-e-variaveis">Tipos e Variáveis</a>;
+    - <a href="#functions">Functions</a>;
 
 <h4 align="center"> 
 	🚧  Bootcamp 🚀 Em andamento...  🚧
@@ -144,3 +145,13 @@ Pode ser atribuída a uma variável, a uma estrutura de dados, passada como argu
 - `Reflect.ownKeys()`: Todas as propriedades do objeto
 
 ## Functions
+- Funções são objetos que permitem serem chamados;
+- Arrow Function
+    - `const arrowFn = () => 'Code here' `. Caso só tenha uma linha de retorno, o `return` é implícito então não precisa chamá-lo;
+    
+    ```javascript
+    const arrowFn2 = () => {
+        //Mais de uma expressão
+        return 'Code here';
+    }
+    ```
