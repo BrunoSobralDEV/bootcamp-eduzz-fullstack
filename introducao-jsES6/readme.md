@@ -134,7 +134,7 @@ Pode ser atribuída a uma variável, a uma estrutura de dados, passada como argu
     const newObj = { foo: 'bar'}
     Object.freeze(newObj)
 
-    //Permite apenas alterar as propriedades existentes
+    //Permite apenas alterar as propriedades existentes (não cria, nem deleta)
     const person = { name: 'Bruno'}
     Object.seal(person)
     ```
@@ -155,3 +155,49 @@ Pode ser atribuída a uma variável, a uma estrutura de dados, passada como argu
         return 'Code here';
     }
     ```
+
+    outro exemplo de arrow function:
+    ```javascript
+    const controlFnExec => fnParam => allowed => {
+        if (allowed) {
+            fnParam();
+        }
+    }
+    ```
+    essa arrow function seria o mesmo que escrever assim:
+    ```javascript
+    function controlFnExec(fnParam) {
+        return function(allowed) {
+            if (allowed) {
+                fnParam();
+            }
+        }
+    }
+    ```
+
+    - Porque usar arrow function, além do código ser mais "enxuto"?
+        - um ponto relevante é sobre o `this`, dentro de uma Arrow Function, sempre será referenciado ao seu contexto de criação. Em Funções "normais" o `this` pode mudar o seu referente, dependendo de onde foi chamado/executado.
+    ```javascript
+    (() => {
+        this.name = 'arrow function';
+        const getNameArrowFn = () => this.name;
+
+        function getName() {
+            return this.name;
+        }
+
+        //Quando a propriedade for igual a chave, podemos ocultar a chave (getName: getName)
+        const user = {
+            name: 'Nome no objeto de execução',
+            getNameArrowFn,
+            getName
+        }
+
+        console.log(user.getNameArrowFn())//'arrow function'
+        console.log(user.getName()) //'Nome no objeto de execução'
+    })();
+    ```
+## Array
+- Retornar a quantidade de itens de um array `.length`
+- Verificar se é Array `.isArray()`
+- Iterar os itens do array `.forEach()`
