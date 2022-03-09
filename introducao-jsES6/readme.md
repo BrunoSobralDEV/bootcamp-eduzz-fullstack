@@ -197,7 +197,85 @@ Pode ser atribuída a uma variável, a uma estrutura de dados, passada como argu
         console.log(user.getName()) //'Nome no objeto de execução'
     })();
     ```
-## Array
-- Retornar a quantidade de itens de um array `.length`
-- Verificar se é Array `.isArray()`
-- Iterar os itens do array `.forEach()`
+### Array
+#### Base para os tópicos seguintes sobre array:
+```javascript
+const gender = {
+    MAN: Symbol('M'),
+    WOMAN: Symbol('W')
+}
+
+const persons = [
+    {
+        name:  'Guilherme',
+        age: 26,
+        gender: gender.MAN
+    },
+    {
+        name:  'Jennifer',
+        age: 19,
+        gender: gender.WOMAN
+    }
+]
+```
+- Retornar a quantidade de itens de um array `.length`;
+- Verificar se é Array `.isArray()`;
+- Iterar os itens do array `.forEach()`;
+    ```javascript
+    persons.forEach((person, index, arr) => {
+        console.log(`Nome: ${person.name} index: ${index}`, arr)
+    })
+    ```
+- Filtrar array `.filter()`;
+    ```javascript
+    const mens = persons.filter(person => person.gender === gender.MAN);
+    console.log('\nNova lista apenas com homens:', mens)
+    ```
+- Retornar um novo array `.map()` - Vantagem criar uma nova propriedade no novo array gerado pelo 'map' sem alterar o "original";
+    ```javascript
+    const personsWithCourse = persons.map(person => {
+        person.course = 'Introdução ao JavaScript';
+        return person;
+    })
+
+    console.log('\nPessoas com a adição do course:' personsWithCourse);
+    ```
+- Transformar um array em outro tipo `.reduce()`;
+    ```javascript
+    const totalAge = persons.reduce((age, person) => {
+        age += person.age;
+        return age;
+    }, 0) //age = 0
+
+    console.log('\nSoma de idade das pessoas', totalAge);
+    ```
+
+- Juntando operações
+    ```javascript
+    const totalEvenAges = persons
+                                .filter(person => person.age % 2 === 0)
+                                .reduce((age, person) => {
+                                    age+= person.age;
+                                    return age;
+                                }, 0);
+    
+    console.log('\nSoma de idades das pessoas que possuem idade par', totalEvenAges);
+    ```
+
+## Operadores
+    Operador binário = Operando1 Operador Operando2 (1 + 2);
+    Operador unário = Operando1 operador / Operador Operando1 (x++, ++x);
+- Aritméticos;
+    - Incremento:
+    ```javascript
+    const a = ++2; //3, já recebe o valor incrementado
+    const b = 2++; //2
+    ```
+- Atribuição;
+- Comparação;
+- Condicional;
+- Lógicos;
+- Spread.
+
+
+
