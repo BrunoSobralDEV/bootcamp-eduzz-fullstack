@@ -311,7 +311,7 @@ const persons = [
     ```
     - break;
 
-## Orientação a objetos
+## Orientação a objetos e Design patterns
 - **Herança** (prototype);
     - `__proto__ -> prototype -> constructor`;
     - `new`: caso tenha um `return` explícito, será apresentado esse retorno;
@@ -335,3 +335,27 @@ const persons = [
 - Modificadores de acesso;
 - Encapsulamento;
 - Static.
+
+### Design patterns/padrões de projetos
+- São soluções generalistas para problemas recorrentes durante o desenvolvimento de um software. Não é framework ou um código pronto.
+
+- Formato de um patter:
+    - Nome; Exemplo; Contexto; Problema; Solução.
+- Tipos:
+    - Criação: abstraem/adiam o processo de criação dos objetos.
+        - Padrões de criação: `Abstract Factory, Builder, Factory Method, Prototype, Singleton`.
+    - Estruturais: Se preocupa como `classes` e `objetos` são compostos para formar estruturas maiores.
+        - Padrões de criação: `Adapter, Bridge, Composite, Decorator...Proxy`
+    - Comportamentais: Se concentram nos algoritmos/atribuições de responsabilidades entre os objetos.
+        - Padrões de criação: `Command, State, Visitor, Mediator, Observer...`
+
+#### Patterns mais utilizados no JavaScript
+- Factory;
+    - Todas as funções que retornam um objeto, sem a necessidade de chamá-las com o new, são consideradas funções Factory (fábrica).
+    ```javascript
+    function FakeUser()
+    ```
+- Singleton;
+- Decorator;
+- Observer;
+- Module.
