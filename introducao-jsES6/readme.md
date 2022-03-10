@@ -263,7 +263,7 @@ const persons = [
     ```
 
 ## Operadores
-    Operador binário = Operando1 Operador Operando2 (1 + 2);
+    Operador binário = Operando1 Operador Operando2 (ex.: `1 + 2`, `something in something`);
     Operador unário = Operando1 operador / Operador Operando1 (x++, ++x);
 - Aritméticos;
     - Incremento:
@@ -274,8 +274,16 @@ const persons = [
 - Atribuição;
 - Comparação;
 - Condicional;
-- Lógicos;
-- Spread.
+    - Ternário `condicao ? valor1 : valor2`
+- Lógicos `AND (&&), OR (||)`;
+- Spread 
+    - Muito usado para concatenar Arrays ou passar parâmetros para funções.
+    ```javascript
+    function fn(x, y, z) { }
+    var args = [0, 1, 2];
+    fn(...args)
+    ```
 
-
-
+## Estruturas condicionais e Repetição
+### Estruturas condicionais
+- `if, else e else if`
