@@ -7,7 +7,9 @@ Tabela de conteúdos
     - <a href="#ecmascript">ECMAScript</a>; 
     - <a href="#tipos-e-variaveis">Tipos e Variáveis</a>;
     - <a href="#functions">Functions</a>;
-
+    - <a href="#operadores">Operadores</a>;
+    - <a href="#estruturas-condicionais-e-repeticao">Estruturas condicionais e Repetição</a>;
+    - <a href="#orientacao-a-objetos">Orientação a objetos e Design Partterns</a>;
 <h4 align="center"> 
 	🚧  Bootcamp 🚀 Em andamento...  🚧
 </h4>
@@ -308,3 +310,28 @@ const persons = [
     }
     ```
     - break;
+
+## Orientação a objetos
+- **Herança** (prototype);
+    - `__proto__ -> prototype -> constructor`;
+    - `new`: caso tenha um `return` explícito, será apresentado esse retorno;
+    - `instanceof`: saber de qual instância foi criado;
+    ```javascript
+    function Animal(qtdPatas){
+        this.qtdPatas = qtdPatas;
+    }
+    function Cachorro(morde){
+        Animal.call(this, 4); //invoca a função Animal
+        this.morde = morde;
+    }
+
+    const pug = new Cachorro(false)
+    console.log(pug)
+    //Cachorro  {qtdPatas: 4, morde: false}
+    ```
+- Classes;
+    -Simplificação da herança de protótipos;
+    - palavra chave `class`.
+- Modificadores de acesso;
+- Encapsulamento;
+- Static.
