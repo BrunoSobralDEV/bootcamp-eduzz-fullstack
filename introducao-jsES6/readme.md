@@ -425,4 +425,19 @@ const persons = [
     console.log(firstGreaterThanTwo);
     // [3, 4]
     ```
-- `indexOf`: retorna o primeiro índice em que um elemento pode ser encontrado
+- `indexOf`: retorna o primeiro índice em que um elemento pode ser encontrado;
+- `lastIndexOf`;
+- `includes`: Verifica se determinado item existe em um array (booleano);
+- `some`: Verifica se pelo menos um item satisfaz a condição (booleano);
+    - `every`: se todos satisfazem a condição;
+- `sort`: Ordenar elementos de um array de acordo com a condição;
+- `reverse`;
+
+**Transformar em outro tipo de dado**
+- `join`: Junta todos os elementos de um array, separados por um delimitador e retorna uma string;
+- `reduce`: Retorna um novo tipo de dado iterando cada posição de um array;
+    ```javascript
+    const arr = [1, 2, 3, 4, 5]
+    arr.reduce((total, value) => total += value, 0);
+    // 15
+    ```
