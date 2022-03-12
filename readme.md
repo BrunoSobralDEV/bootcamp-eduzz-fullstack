@@ -8,7 +8,8 @@
 
 Tabela de conteúdos
 =================
-- [Módulo JavaScript](https://github.com/BrunoSobralDEV/bootcamp-eduzz-fullstack/tree/main/introducao-jsES6)
+- [Módulo - JavaScript ES6 essencial](https://github.com/BrunoSobralDEV/bootcamp-eduzz-fullstack/tree/main/introducao-jsES6)
+- [Módulo - Desenvolvimento avançado com JavaScript ES6](https://github.com/BrunoSobralDEV/bootcamp-eduzz-fullstack/tree/main/Avan%C3%A7ado%20com%20ES6)
 
 ## 🛠 Tecnologias
 - [TypeScript](https://www.typescriptlang.org/)

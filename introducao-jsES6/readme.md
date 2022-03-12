@@ -1,4 +1,4 @@
-# JavaScript
+# JavaScript ES6 essencial
 **<i style="color: purple;">Sumário</i>**
 Tabela de conteúdos
 =================
