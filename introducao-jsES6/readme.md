@@ -12,10 +12,6 @@ Tabela de conteúdos
     - <a href="#orientacao-a-objetos">Orientação a objetos e Design Partterns</a>;
     - <a href="#arrays">Arrays</a>;
 
-<h4 align="center"> 
-	🚧  Bootcamp 🚀 Em andamento...  🚧
-</h4>
-
 ## Conceitos
 - Linguagem interpretada;
 - Linguagem de tipagem fraca e dinâmica;
