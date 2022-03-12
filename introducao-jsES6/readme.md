@@ -10,6 +10,8 @@ Tabela de conteúdos
     - <a href="#operadores">Operadores</a>;
     - <a href="#estruturas-condicionais-e-repeticao">Estruturas condicionais e Repetição</a>;
     - <a href="#orientacao-a-objetos">Orientação a objetos e Design Partterns</a>;
+    - <a href="#arrays">Arrays</a>;
+
 <h4 align="center"> 
 	🚧  Bootcamp 🚀 Em andamento...  🚧
 </h4>
@@ -353,9 +355,74 @@ const persons = [
 - Factory;
     - Todas as funções que retornam um objeto, sem a necessidade de chamá-las com o new, são consideradas funções Factory (fábrica).
     ```javascript
-    function FakeUser()
+    function FakeUser(){
+        return {
+            name: 'Guilherme',
+            lastName: 'Cabrini'
+        }
+    }
+    const user = FakeUser();
     ```
-- Singleton;
-- Decorator;
+- Singleton: Criar uma única instância de uma função construtora e retornar a mesma instância;
+    ```javascript
+    var SETTINGS = {
+        api: 'https://localhost',
+        trackJsToken: '12345'
+    }
+    ```
+- Decorator: recebe uma outra função como parâmetro e estende seu comportamento sem modificá-la;
+    ```javascript
+
+    ```
 - Observer;
-- Module.
+- Module: possibilita organizar melhor o código, sem expor variáveis globais.
+
+## Arrays
+**Manipulação e Iteração de arrays**
+
+- `Array.from`
+    ```javascript
+    const divs = document.querySelectorAll('div') //NodeList
+    const divArray = Array.from(divs)//converte em Array, agora podemos tratá-lo como tal, lentgh, pop, shift...
+    ```
+### Inserir e remover:
+- `push`: adiciona ao final do array;
+- `pop`: remove último elemento;
+- `unshift`: adiciona ao início:
+- `shift`: remove o primeiro elemento;
+- `concat`: concatena um ou mais arrays e retorna um novo array;
+- `slice`: retorna um novo array "fatiando" de acordo com o início e fim. `arr.slice(-1) = pega último elemento`;
+- `splice`: altera um array adicionando/removendo novos elementos. `splice(0, 0, "first)`;
+
+### Iterar
+- `forEach`
+    ```javascript
+    const arr = [1, 2, 3, 4]
+    arr.forEach((value, index) => {
+        console.log(`${index}: ${value}`);
+    })
+    ```
+- `map`: retorna um novo array; `arr.map(val => console.log(val * 2)`
+- `flat`: retorna um novo array concatenados com um sub-array de forma recursiva de acordo com o `depth` especificado;
+    ```javascript
+    const arr = [1, 2, [3, 4]]
+    arr.flat();
+    ```
+- `flatMap`: retorna um novo array (como o map) e executa um `flat` de profundidade(depth) 1;
+- `keys/values/entries`: retorna um `Array Iterator` que contém as chaves/valores/par(chave/valor) para cada elemento do array;
+- `find`: retorna o primeiro item de um array que satisfaz a condição;
+    ```javascript
+    const arr = [1, 2, 3, 4];
+    const firstGreaterThanTwo = arr.find(value => value > 2);
+    console.log(firstGreaterThanTwo);
+    // 3
+    ```
+    - `findIndex`: retorna o índice;
+- `filter`: retorna um novo array com todos os elementos que satisfazem a condição;
+    ```javascript
+    const arr = [1, 2, 3, 4];
+    const firstGreaterThanTwo = arr.filter(value => value > 2);
+    console.log(firstGreaterThanTwo);
+    // [3, 4]
+    ```
+- `indexOf`: retorna o primeiro índice em que um elemento pode ser encontrado
