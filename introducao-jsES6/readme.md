@@ -21,7 +21,7 @@ Tabela de conteúdos
 - Linguagem de tipagem fraca e dinâmica;
 - Funções de primeira classe e ordem maior
 Pode ser atribuída a uma variável, a uma estrutura de dados, passada como argumentos e como retorno de outra função;
-- Closure: Capacidade de uma função lembrar do ambiente que foi criada (escopo[3]).
+- Closure/escopo léxico: Capacidade de uma função lembrar do seu contexto de criação (escopo[3]).
 
     - Escopo de função;
     - Escopo Global;
@@ -437,7 +437,12 @@ const persons = [
 - `join`: Junta todos os elementos de um array, separados por um delimitador e retorna uma string;
 - `reduce`: Retorna um novo tipo de dado iterando cada posição de um array;
     ```javascript
-    const arr = [1, 2, 3, 4, 5]
-    arr.reduce((total, value) => total += value, 0);
-    // 15
+    const students = [
+        {name: 'Bruno',age:30},
+        {name: 'Carla',age:20},
+        {name: 'Jose',age:35},
+    ]
+    students.reduce((totalAge, student) => totalAge += strudent.age, 0);
+    // 0 = começa com 0
+    // 85
     ```
