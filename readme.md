@@ -11,6 +11,10 @@ Tabela de conteúdos
 - [Módulo - JavaScript ES6 essencial](https://github.com/BrunoSobralDEV/bootcamp-eduzz-fullstack/tree/main/introducao-jsES6)
 - [Módulo - Desenvolvimento avançado com JavaScript ES6](https://github.com/BrunoSobralDEV/bootcamp-eduzz-fullstack/tree/main/Avan%C3%A7ado%20com%20ES6)
 
+<br>
+
+- [Desafio de Código - Jogo da memória Genius](https://github.com/BrunoSobralDEV/bootcamp-eduzz-fullstack/tree/main/jogo-de-memoria-estilo-genius)
+
 ## 🛠 Tecnologias
 - [TypeScript](https://www.typescriptlang.org/)
 - [Node.js](https://nodejs.org/en/)
