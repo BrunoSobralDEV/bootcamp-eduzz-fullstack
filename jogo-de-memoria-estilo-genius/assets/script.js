@@ -29,9 +29,6 @@ let shuffleOrder = () => {
     }
 }
 
-function createColorElement(params) {
-    
-}
 
 //"ascender" a próxima cor
 function lightColor(params) {
@@ -47,14 +44,10 @@ function lightColor(params) {
     })
 }
 function lose() {
-
-}    
-function nextLevel() {
     
-}
+}    
 
-//clique do usuário
-function name(params) {
+function nextLevel() {
     
 }
 //verificar se a ordem dada, foi a mesma com a "clicada"
@@ -73,4 +66,20 @@ let checkOrder = () => {
     }
 }
 
+//clique do usuário
+let click = (color) => {
+    clickedOrder[clickedOrder.length] = color;
+    elementColor(color).classListl.add('selected');
 
+    setTimeout(() => {
+        elementColor(color).classList.remove('selected');
+    })
+
+    //comparar se bateu com o jogo
+    checkOrder();
+}
+
+//
+function createColorElement(params) {
+    
+}
