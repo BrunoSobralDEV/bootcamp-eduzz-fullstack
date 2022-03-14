@@ -1,7 +1,9 @@
 let order = [];
 let clickedOrder = [];
 let score = 0;
+let scoreDiv = document.querySelector('.score')
 
+// Tabela
 // 0 = green
 // 1 = red
 // 2 = yellow
@@ -88,6 +90,7 @@ let createColorElement = (color) => {
    
 let nextLevel = () => {
     score++;
+    scoreDiv.innerHTML = score
     shuffleOrder();
 }
 
@@ -103,9 +106,9 @@ let gameOver = () => {
 //Função inicio do jogo
 let playGame = () => {
     alert('Bem vindo ao Gênesis! Iniciando novo jogo!')
-    score = 0;
-
+    
     nextLevel();
+    score = 0;
 }
 
 // green.addEventListener('click', click(0))

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@500&display=swap');
+
 body{
     margin: 0;
     background-color: rgb(208, 255, 239);
@@ -16,11 +18,11 @@ body{
     grid-template-areas: 'green red'
                         'yellow blue';
     grid-gap: 10px;
-    border: 1px solid #ffffff;
-    background-color: #ffffff;
+    border: 30px solid black;
+    background-color: black;
     border-radius: 100%;
-    height: 600px;
-    width: 600px;
+    height: 400px;
+    width: 400px;
 }
 
 .blue{
@@ -46,6 +48,24 @@ body{
     border-top-left-radius: 100%;
 }
 
+.center{
+    background-color: black;
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    border-radius: 100%;
+    
+    font-family: Roboto;
+    font-size: 45px;
+    color: white;
+    text-align: center;
+}
+
+.score{
+    color: red;
+    font-family: Orbitron;
+    margin-top: -50px;
+}
 .selected{
     opacity: 0.5;
 }
