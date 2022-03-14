@@ -31,30 +31,23 @@ let shuffleOrder = () => {
 
 
 //"ascender" a próxima cor
-function lightColor(params) {
-    let lightColor = (element, number) => {
-        let number = number * 500;
-        setTimeout(() => {
-            element.classList.add('selected');
-        }, number -250);
-    }
+let lightColor = (element, number) => {
+    number = number * 500;
+    
+    setTimeout(() => {
+        element.classList.add('selected');
+    }, number - 250);
+
     //remover a classe selected
     setTimeout(() => {
         element.classList.remove('selected');
     })
 }
-function lose() {
-    
-}    
-
-function nextLevel() {
-    
-}
 //verificar se a ordem dada, foi a mesma com a "clicada"
 let checkOrder = () => {
     for(let i in clickedOrder) {
         if(clickedOrder[i] != order[i]) {
-            lose();
+            gameOver();
             break;
         }
     }
@@ -69,17 +62,62 @@ let checkOrder = () => {
 //clique do usuário
 let click = (color) => {
     clickedOrder[clickedOrder.length] = color;
-    elementColor(color).classListl.add('selected');
+    createColorElement(color).classList.add('selected');
 
     setTimeout(() => {
-        elementColor(color).classList.remove('selected');
-    })
+        createColorElement(color).classList.remove('selected');
+        
+        //comparar se bateu com o jogo
+        checkOrder();
+    }, 250)
 
-    //comparar se bateu com o jogo
-    checkOrder();
 }
 
-//
-function createColorElement(params) {
-    
+//função que retorna a cor
+let createColorElement = (color) => {
+    if(color == 0) {
+        return green;
+    } else if(color == 1) {
+        return red;
+    } else if(color == 2) {
+        return yellow;
+    } else if(color == 3) {
+        return blue;
+    } 
 }
+   
+let nextLevel = () => {
+    score++;
+    shuffleOrder();
+}
+
+let gameOver = () => {
+    alert(`Pontuação: ${score}!\nVocê perdeu o jogo!\nClique em Ok para iniciar um novo jogo`);
+    order = [];
+    clickedOrder = [];
+
+    //Iniciar novo jogo
+    playGame();
+}    
+
+//Função inicio do jogo
+let playGame = () => {
+    alert('Bem vindo ao Gênesis! Iniciando novo jogo!')
+    score = 0;
+
+    nextLevel();
+}
+
+// green.addEventListener('click', click(0))
+// red.addEventListener('click', click(1))
+// yellow.addEventListener('click', click(2))
+// blue.addEventListener('click', click(3))
+
+//eventos de clique para as cores
+green.onclick = () => click(0);
+red.onclick = () => click(1);
+yellow.onclick = () => click(2);
+blue.onclick = () => click(3);
+
+//iniciar o jogo
+playGame();
