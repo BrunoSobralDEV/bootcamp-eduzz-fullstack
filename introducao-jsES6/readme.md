@@ -12,6 +12,8 @@ Tabela de conteúdos
     - <a href="#orientacao-a-objetos">Orientação a objetos e Design Partterns</a>;
     - <a href="#arrays">Arrays</a>;
 
+<img src="https://hermes.digitalinnovation.one/lessons/1f94ef80-cba3-4232-a1d5-406131b8d2f3_large.jpg" alt="painel instrutor dio" alt="painel foto instrutor dio">
+
 ## Conceitos
 - Linguagem interpretada;
 - Linguagem de tipagem fraca e dinâmica;
