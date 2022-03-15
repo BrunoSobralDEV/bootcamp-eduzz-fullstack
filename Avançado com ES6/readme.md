@@ -148,4 +148,37 @@ Tabela de conteúdos
     // Destructuring
 
     var [apple2, banana2, orange2, [tomato2]] = ['Apple', 'Banana', 'Orange', ['Tomato']];
-```
+    ```
+- Objetos:
+    ```javascript
+    var obj = {
+        name: 'Bruno',
+        props: {
+            age: 29,
+            favoriteColors: ['green', 'blue']
+        }
+    };
+
+    var { name } = obj
+    console.log(name) // Bruno
+
+    //para tribuir a uma variável:
+    var { name: name2 }
+    console.log(name2) // Bruno
+
+    var age = obj.props.age;
+    var color1 obj.props.favoriteColors[0]
+
+    //Destructuring
+    var { props: { age }} = obj;
+    // ou atribuindo a uma variável
+    var { props: { age: age2, favoriteColors: [color1, color2] }} = obj;
+    ```
+- Funções:
+    ```javascript
+    function sum([a, b] = [0, 0]) {
+        //0,0 = Default values
+        return a + b
+    }
+    console.log(sum([5, 5])); // 10
+    ```
