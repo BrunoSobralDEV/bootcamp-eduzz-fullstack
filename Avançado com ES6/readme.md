@@ -4,7 +4,8 @@ Tabela de conteúdos
 =================
 - JavaScript
     - <a href="#funcoes-avancadas-do-es6">Funções avançadas do ES6</a>;
-    - <a href="#">REST, Spread Operator e Destructuring</a>; 
+    - <a href="#rest-spread-operator-e-destructuring">REST, Spread Operator e Destructuring</a>; 
+    - <a href="#introducao-a-generators">Introdução a Generators</a>; 
 
 <h4 align="center"> 
 	🚧  Bootcamp 🚀 Em andamento...  🚧
@@ -182,3 +183,6 @@ Tabela de conteúdos
     }
     console.log(sum([5, 5])); // 10
     ```
+
+    ## Introdução a Generators
+    ### Symbols e Iterators
