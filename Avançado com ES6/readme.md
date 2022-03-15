@@ -117,6 +117,35 @@ Tabela de conteúdos
     console.log(sum(5, 5, 5, 2, 3));
     ```
 - Strings, arrays e objetos e objetos iteráveis;
+    **Strings:**
     ```javascript
-    
+    const str = 'Digital Innovation One';
+
+    function logArgs(...args) {
+        console.log(args);
+    }
+
+    logArgs(...str) //(22) ["D","i","g","i","t",
     ```
+    **Arrays:**
+    ```javascript
+    const arr = [1, 2, 3, 4];
+    const arr2 = [...arr, 5, 6, 7] // seria o mesmo que arr.concat([5, 6, 7]) = [1,2,3,4,5,6,7]
+
+    console.log(arr2)
+    ```
+
+### Destructuring Assignment
+- Arrays:
+    ```javascript
+    var arr = ['Apple', 'Banana', 'Orange', ['Tomato']];
+
+    var apple = arr[0];
+    var banana = arr[1];
+    var orange = arr[2];
+    var tomato = arr[3][0];
+
+    // Destructuring
+
+    var [apple2, banana2, orange2, [tomato2]] = ['Apple', 'Banana', 'Orange', ['Tomato']];
+```
