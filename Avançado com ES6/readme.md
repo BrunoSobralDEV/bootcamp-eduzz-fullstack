@@ -184,5 +184,61 @@ Tabela de conteúdos
     console.log(sum([5, 5])); // 10
     ```
 
-    ## Introdução a Generators
-    ### Symbols e Iterators
+## Introdução a Generators
+### Symbols e Iterators
+- Symbol: gerar identificado único `const uniqueId = Symbol()`;
+
+**Well known symbols**
+- Symbol.iterator: adicionar funcionalidades aos objetos;
+    ```javascript
+    const arr = [1, 2, 3, 4]
+    const i = arr[Symbol.iterator]();
+    console.log(it.next()) // {value: 1, done: false}
+
+    // percorrer o array
+    while (true) {
+        let { value, done } = it.next();
+
+        if (done) {
+            break;
+        }
+
+        console.log(value)
+    }
+
+    // ES6 tem um jeito mais simples de percorrer
+    for (let value of arr) {
+        console.log(value)
+    }
+
+    // Com objetos conseguimos iterar utilizando o Iterator
+    const obj = {
+        values: [1, 2, 3, 4],
+        [Symbol.iterator]() {
+            let i = 0;
+
+            return {
+                next: () => {
+                    i++;
+                    return {
+                        value: this.values[i -1],
+                        done: i > this.values.length
+                    }
+                }
+            }
+        }
+    }
+    const it = obj[Symbol.iterator]()
+    console.log(it.next())
+
+    // Agora podemos usar o FOR
+    for (let value of obj) {
+        console.log(value)
+    }
+
+    // usar Spread
+    const arr2 = [...obj]
+    ```
+
+    ### Generators
+    - Com `generators` podemos "pausar" e "despausar" uma função;
