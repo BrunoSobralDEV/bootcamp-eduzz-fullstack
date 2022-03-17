@@ -278,3 +278,74 @@ Tabela de conteúdos
     }
     ```
 ## Promises e Fetch
+### Callbacks e Promises
+- Callbacks
+    ```javascript
+    function doSomething(callback) {
+        setTimeout(function() {
+            //did something
+            callback('First data');
+        }, 1000);
+    }
+    ```
+- Promises
+    ```javascript
+    const doSomethingPromise = new Promise((resolve, reject) => {
+        throw new Error('Something went wrong');
+        setTimeout(function() {
+            //did something
+            resolve('First data');
+        }, 1000);
+    });    //Promise pendente
+
+    // then = receber os dados
+    // catch = tratar os erros
+    doSomethingPromise
+    .then(data => console.log(data))
+    .catch(error => console.log(error));
+    ```
+    Estados da Promise:
+    - Pending (pendente/execução); 
+    - Fulfilled (terminou execução); 
+    - Rejected (erro);
+
+### Async / Await, Fetch e EventEmitters
+#### Fetch
+```javascript
+DATA.JSON:
+{
+    "data": [1, 2, 3]
+}
+
+fetch('/data.json')
+    .then(responseStream => responseStream.json())
+    .then(data => { console.log(data) 
+    }).catch(err => {
+        console.log('Erro: ', err);
+    });
+// por default, será um GET
+```
+#### Async / Await
+- Uma maneira de lidar com promises mais simples;
+- `Async` = trás uma promise já resolvida
+- `Await` = espera que outras promises sejam resolvidas (aguardar);
+
+```javascript
+const asyncTimer = () => new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve(12345);
+    }, 1000)
+})
+const simpleFunc = async () => {
+    const data = await asyncTimer()
+    return data
+}
+
+simpleFunc()
+    .then(data => {
+        console.log(data);
+        })
+    .catch(err => {
+        console.log(err)
+    })
+```
