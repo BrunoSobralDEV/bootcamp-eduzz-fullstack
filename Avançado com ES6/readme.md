@@ -6,6 +6,7 @@ Tabela de conteúdos
     - <a href="#funcoes-avancadas-do-es6">Funções avançadas do ES6</a>;
     - <a href="#rest-spread-operator-e-destructuring">REST, Spread Operator e Destructuring</a>; 
     - <a href="#introducao-a-generators">Introdução a Generators</a>; 
+    - <a href="#promises-e-fetch">Promises e Fetch</a>; 
 
 <h4 align="center"> 
 	🚧  Bootcamp 🚀 Em andamento...  🚧
@@ -240,5 +241,40 @@ Tabela de conteúdos
     const arr2 = [...obj]
     ```
 
-    ### Generators
-    - Com `generators` podemos "pausar" e "despausar" uma função;
+### Generators
+- Com `generators` podemos "pausar" e "despausar" uma função;
+    ```javascript
+    function* hello() {
+        console.log('Hello')
+        yield;
+
+        console.log('From')
+        yield;
+
+        console.log('Function!')
+        yield;
+    }
+    const it = hello()
+    console.log(it.next())
+    console.log(it.next())
+    console.log(it.next())
+    ```
+
+- gerar interface de iteração de objetos iteráveis:
+    - uma forma de construir iteradores
+
+    ```javascript
+    const obj = {
+        values: [1, 2, 3, 4],
+        *[Symbol.iterator]() {
+            for (var i = 0; i < this.values.length; i++>) {
+                yield this.values[i];
+            }
+        }
+    }
+
+    for (let value of obj) {
+        console.log(value)
+    }
+    ```
+## Promises e Fetch
