@@ -7,6 +7,7 @@ Tabela de conteúdos
     - <a href="#rest-spread-operator-e-destructuring">REST, Spread Operator e Destructuring</a>; 
     - <a href="#introducao-a-generators">Introdução a Generators</a>; 
     - <a href="#promises-e-fetch">Promises e Fetch</a>; 
+    - <a href="#automacao-de-testes">Automação de testes</a>; 
 
 <h4 align="center"> 
 	🚧  Bootcamp 🚀 Em andamento...  🚧
@@ -109,6 +110,7 @@ Tabela de conteúdos
     ```
 
 ### Spread Operator
+- Podem ser utilizados em arrays, strings, definição de objetos literais e objetos iteráveis;
 - Quebrar `listas` e passar como `argumentos`.
     ```javascript
     const multiply = (...args) => args.reduce((acc, value) => acc * value, 1)
@@ -311,6 +313,7 @@ Tabela de conteúdos
 
 ### Async / Await, Fetch e EventEmitters
 #### Fetch
+- retorna uma Promise;
 ```javascript
 DATA.JSON:
 {
@@ -336,16 +339,53 @@ const asyncTimer = () => new Promise((resolve, reject) => {
         resolve(12345);
     }, 1000)
 })
+
 const simpleFunc = async () => {
     const data = await asyncTimer()
-    return data
+    const dataJSON = await fetch('/data.json').then(resStream => resStream.json());
+
+    return dataJSON;
 }
 
 simpleFunc()
     .then(data => {
         console.log(data);
-        })
+    })
     .catch(err => {
         console.log(err)
     })
 ```
+
+#### EventEmitter (node)
+
+## Automação de testes
+### Testes, TDD e BDD
+- Testes automatizados:
+    - Testes unitários: testar algo específico (componente, função, classe)
+    - Integrados: integração de pequenas partes do código(componentes com outros componentes por exemplo)
+    - Funcionais: funcionalidade de ponta a ponta, integração entre sistemas (com outro código). Teste como usuário faria,  no front-end.
+- Teste manuais
+- Ferramentas de teste:
+    - Teste de carga e performance;
+    - Teste de segurança; 
+    - Mais...
+
+#### TDD (Test Driven Development)
+- É um dos pilares do Extreme Programming, consiste em testar e refatorar em pequenos ciclos, onde você escreve o teste antes do código, faz o mesmo passar e refatorar o código. Escrita do teste -> Escrita do código -> Refatoração (ciclo).
+- Vantagens:
+    - Feedback rápido;
+    - Maior segurança em alterações e novas funcionalidades;
+    - Código mais limpo;
+    - Produtividade.
+
+#### BDD (Behavior Driven Development)
+- Técnica de desenvolvimento ágil que visa integrar regras de negócio com linguagem de programação.
+
+- Pilares:
+    - Testes;
+    - Documentação;
+    - Exemplos
+- Vantagens:
+    - Compartilhamento de conhecimento;
+    - Documentação dinâmica;
+    - Visão do todo.
