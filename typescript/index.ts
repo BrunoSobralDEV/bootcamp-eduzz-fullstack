@@ -1,3 +1,9 @@
+const input = document.getElementById('input') as HTMLInputElement;
+
+input.addEventListener('input', (event) => {
+    console.log(event.currentTarget.);
+})
+/*
 function soma(a: number, b: number) {
     return a + b;
 }
@@ -35,3 +41,4 @@ const felino: IFelino = {
     executarRugido: (alturaEmDecibeis) => (`${alturaEmDecibeis}dB`),
     domestico: true,
 }
+*/
